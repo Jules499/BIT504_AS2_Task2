@@ -1,4 +1,7 @@
 package assignmentTwo;
+/**
+ * Enumeration for the game states
+ */
 
 public enum GameState {
 	Playing,
