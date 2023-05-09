@@ -80,8 +80,8 @@ public class GameMain extends JPanel implements MouseListener{
 				//DONE: set the default close operation of the frame to exit_on_close
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				
-				//disable window resizability
-				//frame.setResizable(false);
+				//disable window resizing
+				frame.setResizable(false);
 		            
 				
 				frame.pack();             
