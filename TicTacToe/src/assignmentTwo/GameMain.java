@@ -81,7 +81,7 @@ public class GameMain extends JPanel implements MouseListener{
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				
 				//disable window resizability
-				frame.setResizable(false);
+				//frame.setResizable(false);
 		            
 				
 				frame.pack();             
@@ -142,14 +142,24 @@ public class GameMain extends JPanel implements MouseListener{
 		public void updateGame(Player thePlayer, int row, int col) {
 			//check for win after play
 			if(board.hasWon(thePlayer, row, col)) {
-				
-				// TODO: check which player has won and update the currentstate to the appropriate gamestate for the winner
+				// DONE: check which player has won and update the currentstate to the appropriate gamestate for the winner
+                switch(thePlayer) {
+                    case Cross:
+                    	currentState = GameState.Cross_won;
+                    	break;
+                    case Nought:
+                        currentState = GameState.Nought_won;
+                        break;
+                    default:
+                    	break;
 
+                }
 				
 			} else 
 				if (board.isDraw ()) {
 					
-				// TODO: set the currentstate to the draw gamestate
+				// DONE: set the currentstate to the draw gamestate
+					currentState = GameState.Draw;
 
 			}
 			//otherwise no change to current state of playing
@@ -187,7 +197,8 @@ public class GameMain extends JPanel implements MouseListener{
 			initGame();            
 		}   
 		
-		//TODO: redraw the graphics on the UI          
+		//TODO: redraw the graphics on the UI     
+		
            
 	}
 		
